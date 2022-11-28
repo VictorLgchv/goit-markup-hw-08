@@ -1,0 +1,33 @@
+/* Додаємо змінні */
+:root {
+  --first-text-color: #757575;
+  --second-text-logo-color: #2196f3;
+  --second-text-link-color: #2196f3;
+  --second-text-btn-color: #2196f3;
+  --third-text-btn-color: #ffffff;
+  --third-text-logo-color: #ffffff;
+  --third-text-title-color: #ffffff;
+  --third-text-color: #ffffff;
+  --fourth-text-color: #000000;
+  --fifth-text-color: #2f303a;
+  --sixth-text-color: #f5f4fa;
+  --first-item-background-color: #ffffff;
+  --headlines-color: #212121;
+  --first-icons-color: #afb1b8;
+  --second-icons-color: #afb1b8;
+  --third-icons-color: #ffffff;
+  --modal-btn-color: #188ce8;
+}
+
+/* Скидаємо базові налаштування */
+/* pages */
+/* container */
+/* header */
+/* hero */
+/* page feature */
+/* doing */
+/* team */
+/* clients */
+/* footer */
+/*! PAGE PORTFOLIO */
+/* modal */
