@@ -1,7 +1,10 @@
 .footer {
   background-color: $fifth-text-color;
 
+  
+
   &__container {
+    
     @media screen and (min-width: 1200px) {
       display: flex;
       flex-direction: row;
@@ -29,6 +32,7 @@
 
   &__address {
     font-style: normal;
+
   }
 
   &__links {
@@ -40,7 +44,8 @@
   }
 
   &__contain{
-    
+   margin-bottom: 60px;
+
     @media screen and (min-width: 768px) {
       display: flex;
     align-items: baseline;
@@ -67,10 +72,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  min-width: 231px;
-
-  padding-bottom: 60px;
+  margin-bottom: 60px;
 
   &__text {
     margin-bottom: 9px;
@@ -108,8 +110,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    padding-bottom: 60px;
   &__title {
     font-weight: 700;
     font-size: 14px;
@@ -119,6 +119,10 @@
 
     color: $sixth-text-color;
     margin-bottom: 20px;
+
+    @media screen and (min-width: 1200px) {
+      margin-right: auto;
+      }
   }
 
   &__list {
