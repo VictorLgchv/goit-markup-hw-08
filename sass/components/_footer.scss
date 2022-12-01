@@ -8,9 +8,7 @@
     @media screen and (min-width: 1200px) {
       display: flex;
       flex-direction: row;
-    justify-content: center;
     align-items: baseline;
-    gap: 93px;
     }
     
   }
@@ -43,8 +41,14 @@
    
   }
 
+  &__pos{
+    margin-bottom: 60px;
+  }
+
   &__contain{
-   margin-bottom: 60px;
+   @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+    }
 
     @media screen and (min-width: 768px) {
       display: flex;
@@ -72,7 +76,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    align-items: flex-start;
+    }
 
   &__text {
     margin-bottom: 9px;
@@ -113,7 +120,7 @@
   &__title {
     font-weight: 700;
     font-size: 14px;
-    line-height: 0.87;
+    line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
 
@@ -161,7 +168,7 @@
 
 .footer-subscribe {
   @media screen and (min-width: 1200px) {
-    
+    margin-left: auto;
   }
     
   &__title {
