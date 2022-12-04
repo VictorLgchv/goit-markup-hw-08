@@ -1388,7 +1388,17 @@ body {
 }
 .portfolio__item {
   position: relative;
-  width: 370px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .portfolio__item {
+    width: calc((100% - 30px) / 2);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .portfolio__item {
+    width: calc((100% - 60px) / 3);
+  }
 }
 .portfolio__link {
   display: block;
@@ -1404,6 +1414,7 @@ body {
 }
 .portfolio__image {
   display: block;
+  width: 100%;
 }
 .portfolio__actions {
   position: relative;
@@ -1433,13 +1444,17 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 50px;
+}
+@media screen and (min-width: 768px) {
+  .portfolio-buttons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 .portfolio-buttons__button {
   padding: 6px 25px;

@@ -15,19 +15,23 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
     />
-    <link rel="stylesheet" href="./css/main.min.css"/>
+    <link rel="stylesheet" href="./css/main.min.css" />
   </head>
   <body>
     <header class="header">
       <div class="header__container">
-        <a href="./index.html" class="header__logo logo-header">Web<span class="logo-header__color">Studio</span></a>
+        <a href="./index.html" class="header__logo logo-header"
+          >Web<span class="logo-header__color">Studio</span></a
+        >
         <nav class="header__menu menu">
           <ul class="menu__list">
             <li class="menu__item">
               <a href="./index.html" class="menu__link">Студія</a>
             </li>
             <li class="menu__item">
-              <a href="./portfolio.html" class="menu__link menu__link--active">Портфоліо</a>
+              <a href="./portfolio.html" class="menu__link menu__link--active"
+                >Портфоліо</a
+              >
             </li>
             <li class="menu__item">
               <a href="./contacts.html" class="menu__link">Контакти</a>
@@ -40,23 +44,83 @@
               href="mailto:info@devstudio.com"
               class="contacts__link contacts-icon"
             >
-              <svg class="contacts-icon__icon" width="19" height="12">
+              <svg class="contacts-icon__icon" width="14" height="10">
                 <use href="./images/icons/main-sprite.svg#icon-mail"></use>
               </svg>
               info@devstudio.com</a
             >
           </li>
           <li class="contacts__item contacts-icon">
-            <a
-              href="tel:+380961111111"
-              class="contacts__link"
-              ><svg class="contacts-icon__icon" width="10" height="16">
+            <a href="tel:+380961111111" class="contacts__link"
+              ><svg class="contacts-icon__icon" width="10" height="14">
                 <use href="./images/icons/main-sprite.svg#icon-phone"></use>
               </svg>
               +38 096 111 11 11</a
             >
           </li>
         </ul>
+        <button type="button" class="header__button button-mob" data-menu-open>
+          <svg class="button-mob__icon" width="40" height="40">
+            <use href="./images/icons/main-sprite.svg#icon-menu"></use>
+          </svg>
+        </button>
+        <div class="mob-menu hidden" data-menu>
+          <div class="mob-menu__content">
+            <button type="button" class="mob-menu__button" data-menu-close>
+              <svg class="mob-menu__icon" width="40" height="40">
+                <use href="./images/icons/main-sprite.svg#icon-mob-close"></use>
+              </svg>
+            </button>
+            <nav class="mob-menu__nav">
+              <ul class="mob-menu__list">
+                <li class="mob-menu__item">
+                  <a href="./index.html" class="mob-menu__link">Студія</a>
+                </li>
+                <li class="mob-menu__item">
+                  <a
+                    href="./portfolio.html"
+                    class="mob-menu__link mob-menu__link--active"
+                    >Портфоліо</a
+                  >
+                </li>
+                <li class="mob-menu__item">
+                  <a href="./contacts.html" class="mob-menu__link">Контакти</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="mob-menu__pos">
+              <ul class="mob-menu__contacts mob-contacts">
+                <li class="mob-contacts__item">
+                  <a
+                    href="mailto:info@devstudio.com"
+                    class="mob-contacts__link"
+                  >
+                    info@devstudio.com</a
+                  >
+                </li>
+                <li class="mob-contacts__item">
+                  <a href="tel:+380961111111" class="mob-contacts__link">
+                    +38 096 111 11 11</a
+                  >
+                </li>
+              </ul>
+              <ul class="mob-menu__soc soc">
+                <li class="soc__item">
+                  <a href="" class="soc__link">Instagram</a>
+                </li>
+                <li class="soc__item">
+                  <a href="" class="soc__link">Twitter</a>
+                </li>
+                <li class="soc__item">
+                  <a href="" class="soc__link">Facebook</a>
+                </li>
+                <li class="soc__item">
+                  <a href="" class="soc__link">LinkedIn</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
     <main class="page">
@@ -93,12 +157,35 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link"
                 ><div class="portfolio__actions portfolio-actions">
-                  <img
-                    class="portfolio__image"
-                    src="./images/portfolio/potfolio-1.jpg"
-                    alt="Сторінка веб-сайту"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-1-des.jpg    1x,
+                        ./images/portfolio/potfolio-1-des-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-1-tab.jpg    1x,
+                        ./images/portfolio/potfolio-1-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-1.jpg    1x,
+                        ./images/portfolio/potfolio-1-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="portfolio__image"
+                      src="./images/portfolio/potfolio-1.jpg"
+                      alt="Сторінка веб-сайту"
+                      width="450"
+                    />
+                  </picture>
                   <div class="portfolio-actions__action">
                     <p class="portfolio-actions__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
@@ -116,13 +203,37 @@
             </li>
             <li class="portfolio__item">
               <a href="" class="portfolio__link"
-                ><div class="portfolio__actions ">
-                  <img
-                    class="portfolio__image"
-                    src="./images/portfolio/potfolio-2.jpg"
-                    alt="Сторінка веб-сайту"
-                    width="370"
-                  />
+                ><div class="portfolio__actions">
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-2-des.jpg    1x,
+                        ./images/portfolio/potfolio-2-des-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-2-tab.jpg    1x,
+                        ./images/portfolio/potfolio-2-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-2.jpg    1x,
+                        ./images/portfolio/potfolio-2-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="portfolio__image"
+                      src="./images/portfolio/potfolio-2.jpg"
+                      alt="Сторінка веб-сайту"
+                      width="450"
+                    />
+                  </picture>
+
                   <div class="portfolio-actions__action">
                     <p class="portfolio-actions__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
@@ -142,13 +253,37 @@
             </li>
             <li class="portfolio__item">
               <a href="" class="portfolio__link"
-                ><div class="portfolio__actions ">
-                  <img
-                    class="portfolio__image"
-                    src="./images/portfolio/potfolio-3.jpg"
-                    alt="Сторінка веб-сайту"
-                    width="370"
-                  />
+                ><div class="portfolio__actions">
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-3-des.jpg    1x,
+                        ./images/portfolio/potfolio-3-des-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-3-tab.jpg    1x,
+                        ./images/portfolio/potfolio-3-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-3.jpg    1x,
+                        ./images/portfolio/potfolio-3-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="portfolio__image"
+                      src="./images/portfolio/potfolio-3.jpg"
+                      alt="Сторінка веб-сайту"
+                      width="450"
+                    />
+                  </picture>
+
                   <div class="portfolio-actions__action">
                     <p class="portfolio-actions__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
@@ -168,13 +303,37 @@
             </li>
             <li class="portfolio__item">
               <a href="" class="portfolio__link"
-                ><div class="portfolio__actions ">
-                  <img
-                    class="portfolio__image"
-                    src="./images/portfolio/potfolio-4.jpg"
-                    alt="Сторінка веб-сайту"
-                    width="370"
-                  />
+                ><div class="portfolio__actions">
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-4-des.jpg    1x,
+                        ./images/portfolio/potfolio-4-des-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-4-tab.jpg    1x,
+                        ./images/portfolio/potfolio-4-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-4.jpg    1x,
+                        ./images/portfolio/potfolio-4-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="portfolio__image"
+                      src="./images/portfolio/potfolio-4.jpg"
+                      alt="Сторінка веб-сайту"
+                      width="450"
+                    />
+                  </picture>
+
                   <div class="portfolio-actions__action">
                     <p class="portfolio-actions__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
@@ -194,13 +353,37 @@
             </li>
             <li class="portfolio__item">
               <a href="" class="portfolio__link"
-                ><div class="portfolio__actions ">
-                  <img
-                    class="portfolio__image"
-                    src="./images/portfolio/potfolio-5.jpg"
-                    alt="Сторінка веб-сайту"
-                    width="370"
-                  />
+                ><div class="portfolio__actions">
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-5-des.jpg    1x,
+                        ./images/portfolio/potfolio-5-des-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-5-tab.jpg    1x,
+                        ./images/portfolio/potfolio-5-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-5.jpg    1x,
+                        ./images/portfolio/potfolio-5-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="portfolio__image"
+                      src="./images/portfolio/potfolio-5.jpg"
+                      alt="Сторінка веб-сайту"
+                      width="450"
+                    />
+                  </picture>
+
                   <div class="portfolio-actions__action">
                     <p class="portfolio-actions__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
@@ -220,13 +403,36 @@
             </li>
             <li class="portfolio__item">
               <a href="" class="portfolio__link"
-                ><div class="portfolio__actions ">
-                  <img
-                    class="portfolio__image"
-                    src="./images/portfolio/potfolio-6.jpg"
-                    alt="Сторінка веб-сайту"
-                    width="370"
-                  />
+                ><div class="portfolio__actions">
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-6-des.jpg    1x,
+                        ./images/portfolio/potfolio-6-des-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-6-tab.jpg    1x,
+                        ./images/portfolio/potfolio-6-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-6.jpg    1x,
+                        ./images/portfolio/potfolio-6-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="portfolio__image"
+                      src="./images/portfolio/potfolio-6.jpg"
+                      alt="Сторінка веб-сайту"
+                      width="450"
+                    />
+                  </picture>
                   <div class="portfolio-actions__action">
                     <p class="portfolio-actions__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
@@ -247,12 +453,35 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link"
                 ><div class="portfolio__actions portfolio-actions">
-                  <img
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-7-des.jpg    1x,
+                        ./images/portfolio/potfolio-7-des-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-7-tab.jpg    1x,
+                        ./images/portfolio/potfolio-7-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-7.jpg    1x,
+                        ./images/portfolio/potfolio-7-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
                     class="portfolio__image"
                     src="./images/portfolio/potfolio-7.jpg"
                     alt="Сторінка веб-сайту"
-                    width="370"
+                    width="450"
                   />
+                  </picture>
                   <div class="portfolio-actions__action">
                     <p class="portfolio-actions__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
@@ -273,12 +502,35 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link"
                 ><div class="portfolio__actions portfolio-actions">
-                  <img
-                    class="portfolio__image"
-                    src="./images/portfolio/potfolio-8.jpg"
-                    alt="Сторінка веб-сайту"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-8-des.jpg    1x,
+                        ./images/portfolio/potfolio-8-des-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-8-tab.jpg    1x,
+                        ./images/portfolio/potfolio-8-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-8.jpg    1x,
+                        ./images/portfolio/potfolio-8-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="portfolio__image"
+                      src="./images/portfolio/potfolio-8.jpg"
+                      alt="Сторінка веб-сайту"
+                      width="450"
+                    />
+                  </picture>
                   <div class="portfolio-actions__action">
                     <p class="portfolio-actions__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
@@ -299,12 +551,35 @@
             <li class="portfolio__item">
               <a href="" class="portfolio__link">
                 <div class="portfolio__actions portfolio-actions">
-                  <img
-                    class="portfolio__image"
-                    src="./images/portfolio/potfolio-9.jpg"
-                    alt="Сторінка веб-сайту"
-                    width="370"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-9-des.jpg    1x,
+                        ./images/portfolio/potfolio-9-des-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-9-tab.jpg    1x,
+                        ./images/portfolio/potfolio-9-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio/potfolio-9.jpg    1x,
+                        ./images/portfolio/potfolio-9-2x.jpg 2x
+                      "
+                      media="(min-width: 320px)"
+                    />
+                    <img
+                      class="portfolio__image"
+                      src="./images/portfolio/potfolio-9.jpg"
+                      alt="Сторінка веб-сайту"
+                      width="450"
+                    />
+                  </picture>
                   <div class="portfolio-actions__action">
                     <p class="portfolio-actions__text">
                       Ресурс пропонує комплексні пропозиції з різним рівнем
@@ -324,73 +599,82 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer section">
       <div class="footer__container">
-        <div class="footer__pos">
-          <a href="./index.html" class="footer__logo logo-footer">Web<span class="logo-footer__color">Studio</span></a>
-          <address class="footer__address address">
-            <p class="address__text">м. Київ, пр-т Лесі Українки, 26</p>
-            <ul class="address__list">
-              <li class="address__item">
-                <a href="mailto:info@devstudio.com" class="address__link"
-                  >info@devstudio.com</a
-                >
+        <div class="footer__contain">
+          <div class="footer__pos">
+            <a href="./index.html" class="footer__logo logo-footer"
+              >Web<span class="logo-footer__color">Studio</span></a
+            >
+            <address class="footer__address address">
+              <p class="address__text">м. Київ, пр-т Лесі Українки, 26</p>
+              <ul class="address__list">
+                <li class="address__item">
+                  <a href="mailto:info@devstudio.com" class="address__link"
+                    >info@devstudio.com</a
+                  >
+                </li>
+                <li class="address__item">
+                  <a href="tel:+380961111111" class="address__link"
+                    >+38 096 111 11 11</a
+                  >
+                </li>
+              </ul>
+            </address>
+          </div>
+          <div class="footer__links footer-links">
+            <h2 class="footer-links__title">приєднуйтесь</h2>
+            <ul class="footer-links__list">
+              <li class="footer-links__item">
+                <a href="" class="footer-links__link">
+                  <svg class="footer-links__icon" width="20" height="20">
+                    <use href="./images/icons/main-sprite.svg#icon2-1"></use>
+                  </svg>
+                </a>
               </li>
-              <li class="address__item">
-                <a href="tel:+380961111111" class="address__link"
-                  >+38 096 111 11 11</a
-                >
+              <li class="footer-links__item">
+                <a href="" class="footer-links__link">
+                  <svg class="footer-links__icon" width="20" height="20">
+                    <use href="./images/icons/main-sprite.svg#icon2-2"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer-links__item">
+                <a href="" class="footer-links__link">
+                  <svg class="footer-links__icon" width="20" height="20">
+                    <use href="./images/icons/main-sprite.svg#icon2-3"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="footer-links__item">
+                <a href="" class="footer-links__link">
+                  <svg class="footer-links__icon" width="20" height="20">
+                    <use href="./images/icons/main-sprite.svg#icon2-4"></use>
+                  </svg>
+                </a>
               </li>
             </ul>
-          </address>
-        </div>
-        <div class="footer__links footer-links">
-          <h2 class="footer-links__title">приєднуйтесь</h2>
-          <ul class="footer-links__list">
-            <li class="footer-links__item">
-              <a href="" class="footer-links__link">
-                <svg class="footer-links__icon" width="20" height="20">
-                  <use href="./images/icons/main-sprite.svg#icon2-1"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-links__item">
-              <a href="" class="footer-links__link">
-                <svg class="footer-links__icon" width="20" height="20">
-                  <use href="./images/icons/main-sprite.svg#icon2-2"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-links__item">
-              <a href="" class="footer-links__link">
-                <svg class="footer-links__icon" width="20" height="20">
-                  <use href="./images/icons/main-sprite.svg#icon2-3"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="footer-links__item">
-              <a href="" class="footer-links__link">
-                <svg class="footer-links__icon" width="20" height="20">
-                  <use href="./images/icons/main-sprite.svg#icon2-4"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
+          </div>
         </div>
         <div class="footer__subscribe footer-subscribe">
           <h2 class="footer-subscribe__title">Підпишіться на розсилку</h2>
-            <form class="footer-subscribe__form">
-              <input class="footer-subscribe__input" type="email" name="email" placeholder="E-mail" />
-              <button type="submit" class="footer-subscribe__btn footer-btn">
-                Підписатися
-                <svg class="footer-btn__svg" width="24" height="24">
-                  <use href="./images/icons/main-sprite.svg#icon-send"></use>
-                </svg>
-              </button>
-            </form>
+          <form class="footer-subscribe__form">
+            <input
+              class="footer-subscribe__input"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+            />
+            <button type="submit" class="footer-subscribe__btn footer-btn">
+              Підписатися
+              <svg class="footer-btn__svg" width="24" height="24">
+                <use href="./images/icons/main-sprite.svg#icon-send"></use>
+              </svg>
+            </button>
+          </form>
         </div>
       </div>
     </footer>
-    
+    <script src="./js/menu.js"></script>
   </body>
 </html>
